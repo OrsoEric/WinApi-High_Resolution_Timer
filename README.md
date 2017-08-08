@@ -31,10 +31,21 @@ Winapi_chrono::start( index )
   Start the timer of index [index]
   
 Winapi_chrono::stop( index )
-  Get the time passed since start
+  Get the time elapsed since start
 
 Winapi_chrono::stop_start( index )
-  Get the time, than reset the timer
+  Get the time elapsed since start, than restart
   
 Winapi_chrono~Winapi_chrono( void )
   Destroy all underlying structures
+  
+# Hello world
+float elapsed;
+my_timer = Winapi_chrono(); //construct timer class
+my_timer.start( 0 );  //start section 0 of timer
+//lots of fancy code
+elapsed = my_timer.stop( 0 ); //time past since start. 
+//stop will NOT stop the count, another stop will return the elapsed time since start
+
+my_timer.start( 0 )
+
